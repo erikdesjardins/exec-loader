@@ -1,0 +1,25 @@
+{
+  "name": "exec-loader",
+  "version": "0.0.1",
+  "description": "Webpack loader to execute imports at build time.",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erikdesjardins/exec-loader.git"
+  },
+  "keywords": [
+    "webpack"
+  ],
+  "author": "Erik Desjardins",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/erikdesjardins/exec-loader/issues"
+  },
+  "homepage": "https://github.com/erikdesjardins/exec-loader#readme",
+  "devDependencies": {
+    "ava": "^0.12.0"
+  }
+}
