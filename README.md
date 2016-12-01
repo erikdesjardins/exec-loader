@@ -2,7 +2,7 @@
 
 Webpack loader to execute imports at build time.
 
-Simply runs the source through [`this.exec`](https://webpack.github.io/docs/loaders.html#exec), then stringifies and exports the result.
+Simply runs the source through [`this.exec`](https://webpack.github.io/docs/loaders.html#exec) and exports the result.
 
 ## Installation
 
