@@ -21,6 +21,6 @@ module.exports = child_process.execSync('git describe', { encoding: 'utf8' }).tr
 **example.js:**
 
 ```js
-var revision = require('exec!./latestRevision');
+var revision = require('exec-loader!./latestRevision');
 // revision === 'v1.0.0'
 ```
