@@ -23,4 +23,7 @@ module.exports = child_process.execSync('git describe', { encoding: 'utf8' }).tr
 ```js
 var revision = require('exec-loader!./latestRevision');
 // revision === 'v1.0.0'
+
+// to cache the result in watch mode
+var revision = require('exec-loader?cache!./latestRevision');
 ```
