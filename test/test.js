@@ -25,7 +25,7 @@ test.serial('basic usage', async t => {
 		});
 	});
 
-	t.regex(fs.readFileSync(path.join(__dirname, 'dist/main.bundle.js')), /module\.exports = "abc";/);
+	t.regex(fs.readFileSync(path.join(__dirname, 'dist/main.bundle.js'), 'utf8'), /module\.exports = "abc";/);
 });
 
 const noop = () => {};
