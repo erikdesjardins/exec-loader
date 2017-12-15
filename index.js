@@ -8,10 +8,13 @@
 var loaderUtils = require('loader-utils');
 
 module.exports = function(source) {
-	var options = Object.assign({ cache: false }, loaderUtils.getOptions(this));
+	var options = Object.assign({ cache: false, export: 'es6' }, loaderUtils.getOptions(this));
 
 	this.cacheable(options.cache);
 
 	var result = this.exec(source, this.resourcePath);
-	return 'module.exports = ' + JSON.stringify(result) + ';';
+
+	var prefix = options.export === 'commonjs' ? 'module.exports = ' : 'export default ';
+
+	return prefix + JSON.stringify(result) + ';';
 };
