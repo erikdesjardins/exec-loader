@@ -17,15 +17,25 @@ test.serial('basic usage', async t => {
 			},
 			module: {
 				loaders: [
-					{ test: /exec\.js$/, loader: path.join(__dirname, '../index.js') }
+					{
+						test: /exec\.js$/,
+						loader: path.join(__dirname, '../index.js'),
+						options: { export: 'commonjs' }
+					}, {
+						test: /exec\.es6\.js$/,
+						loader: path.join(__dirname, '../index.js'),
+					}
 				]
-			}
+			},
+			plugins: [new webpack.optimize.ModuleConcatenationPlugin()]
 		}, (err, stats) => {
 			err ? reject(err) : resolve(stats);
 		});
 	});
 
-	t.regex(fs.readFileSync(path.join(__dirname, 'dist/main.bundle.js'), 'utf8'), /module\.exports = "abc";/);
+	const bundle = fs.readFileSync(path.join(__dirname, 'dist/main.bundle.js'), 'utf8');
+	t.regex(bundle, /module\.exports = "abc";/);
+	t.regex(bundle, /var exec_es6 = \("abc"\);/);
 });
 
 const noop = () => {};

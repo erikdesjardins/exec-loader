@@ -21,9 +21,12 @@ module.exports = child_process.execSync('git describe', { encoding: 'utf8' }).tr
 **example.js:**
 
 ```js
-var revision = require('exec-loader!./latestRevision');
+import revision from 'exec-loader!./latestRevision';
 // revision === 'v1.0.0'
 
 // to cache the result in watch mode
-var revision = require('exec-loader?cache!./latestRevision');
+import revision from 'exec-loader?cache!./latestRevision';
+
+// to generate `module.exports` instead of ES6 exports (useful in rare circumstances)
+var revision = require('exec-loader?export=commonjs!./latestRevision');
 ```
