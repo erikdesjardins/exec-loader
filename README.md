@@ -1,4 +1,4 @@
-# exec-loader [![Build Status](https://travis-ci.org/erikdesjardins/exec-loader.svg?branch=master)](https://travis-ci.org/erikdesjardins/exec-loader)
+# exec-loader
 
 Webpack loader to execute imports at build time.
 
